@@ -6,12 +6,20 @@ let years;
 
 // COLLECT VALUES FROM THE USER
 
-investment = parseFloat(prompt('Enter investment amount as xxxx.xx'));
-console.log(typeof(investment))
+do {
+    investment = parseFloat(prompt('Enter investment amount as xxxx.xx'));
+    
+} while (isNaN(investment))
 
-
+do {
 rate = parseFloat(prompt('Enter interest rate as xx.x'));
+
+} while ((rate > 6) || (rate < 0) || (isNaN(rate)))
+
+do {
 years = parseInt(prompt('Enter the number of years you want to invest for'));
+
+} while ((years < 1) || (years > 30) || (isNaN(years)))
 
 // CALCULATE FUTURE VALUE
 futureValue = investment;
